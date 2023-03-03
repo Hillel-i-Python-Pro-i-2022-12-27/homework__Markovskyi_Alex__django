@@ -1,0 +1,24 @@
+# CORE
+django==4.1.7
+
+# Faker is a Python package that generates fake data for you.
+faker==17.5.0
+
+# A framework for managing and maintaining multi-language pre-commit hooks.
+pre-commit==3.1.1
+
+# ↓↓↓ THIS IN .pre-commit-config.yaml ↓↓↓
+#----------------------------------------
+# A tool to automatically upgrade syntax for newer versions.
+pyupgrade==3.3.1
+
+# Removes unused imports and unused variables
+autoflake==2.0.1
+
+# The uncompromising code formatter.
+black==23.1.0
+
+# The modular source code checker: pep8 pyflakes and co
+flake8==6.0.0
+
+#----------------------------------------
