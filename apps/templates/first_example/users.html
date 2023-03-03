@@ -1,0 +1,15 @@
+{%  extends '_helpers/_base.html' %}
+
+{% block content %}
+    <ol>
+        {%  for user in users %}
+        <li>
+            <span>{{ user.login }}</span>
+            <span> - </span>
+            <span>{{ user.email }}</span>
+            <span> - </span>
+            <span>{{ user.password }}</span>
+        </li>
+        {% endfor %}
+    </ol>
+{% endblock %}

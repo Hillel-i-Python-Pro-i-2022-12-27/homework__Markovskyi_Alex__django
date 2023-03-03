@@ -23,4 +23,5 @@ urlpatterns = [
         ),
     ),
     path("humans", views.HumansView.as_view(), name="humans"),
+    path("users", views.UsersView.as_view(), name="users"),
 ]
