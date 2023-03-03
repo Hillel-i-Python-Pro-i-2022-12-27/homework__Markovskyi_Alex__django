@@ -20,7 +20,7 @@ faker = Faker()
 
 
 def generate_user() -> User:
-    profile = faker.profile()
+    profile = faker.profile()  # Take information from Faker profile
     return User(
         login=profile["username"],
         email=profile["mail"],
