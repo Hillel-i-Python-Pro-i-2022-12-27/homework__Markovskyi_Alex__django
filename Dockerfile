@@ -17,9 +17,9 @@ COPY --chown=${USER} requirements.txt requirements.txt
 RUN pip install --upgrade pip && \
     pip install --requirement requirements.txt
 
-COPY --chown=${USER} app.py app.py
-COPY --chown=${USER} application application
+COPY --chown=${USER} ./manage.py manage.py
+COPY --chown=${USER} ./core core
 
 USER ${USER}
 
-ENTRYPOINT ["flask", "run"]
+ENTRYPOINT ["python", "manage.py", "runserver", "0.0.0.0:8000"]
