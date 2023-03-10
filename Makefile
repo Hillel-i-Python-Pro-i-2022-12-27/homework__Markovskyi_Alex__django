@@ -70,3 +70,12 @@ pre-commit-run:
 
 pre-commit-run-all:
 	@pre-commit run --all-files
+
+.PHONY: migrations
+# Make migrations
+migrations:
+	@python manage.py makemigrations
+
+.PHONY: migrate
+# Migrate
+	@python manage.py migrate
