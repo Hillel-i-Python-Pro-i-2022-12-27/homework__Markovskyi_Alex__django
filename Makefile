@@ -84,4 +84,15 @@ migrate:
 .PHONY: django-i-generate-animals-i-100
 # Generate 100 animals
 django-i-generate-animals-i-100:
-	@python manage.py generate-animals --amount 100
+	@python manage.py generate_animals --amount 100
+
+.PHONY: django-i-generate-contacts-i-100
+# Generate 100 contacts
+django-i-generate-contacts-i-100:
+	@python manage.py generate_contacts --amount 100
+
+.PHONY: django-i-generate-ALL
+# Generate ALL content with amount=100
+django-i-generate-ALL:
+	@python manage.py generate_animals --amount 100 && \
+	python manage.py generate_contacts --amount 100

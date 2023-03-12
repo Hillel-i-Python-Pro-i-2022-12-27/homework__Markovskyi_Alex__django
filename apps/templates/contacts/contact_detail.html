@@ -1,0 +1,8 @@
+{% extends '_helpers/_base.html' %}
+
+{% block content %}
+
+        <p style="font-size: small">{{ object }}</p>
+    <input type="button" onclick="location.href='{% url 'contacts:update' pk=contact.id %}';" value="Edit" />
+    <input type="button" onclick="location.href='{% url 'contacts:list_by_class' %}';" value="Back" />
+{% endblock %}

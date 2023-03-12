@@ -1,0 +1,47 @@
+{% extends '_helpers/_base.html' %}
+{% block content %}
+        <a href="{% url 'contacts:create' %}">
+        <button>
+            Create new contact
+        </button>
+    </a>
+<table style="font-size: small", border="1">
+    <tr align="center">
+        <td>№</td>
+        <td>Username</td>
+        <td>Full Name</td>
+{#        <td>Birth Day</td>#}
+{#        <td>Sex</td>#}
+{#        <td>SSN</td>#}
+{#        <td>Company</td>#}
+{#        <td>Job</td>#}
+        <td>E-mail</td>
+        <td>Telephone</td>
+{#        <td>Address</td>#}
+        <td>Operations</td>
+    </tr>
+    {% for contact in object_list %}
+        <tr>
+            <td>{{ contact.pk }}</td>
+            <td>{{ contact.username }}</td>
+            <td>{{ contact.name }}</td>
+{#            <td>{{ contact.birthdate }}</td>#}
+{#            <td>{{ contact.sex }}</td>#}
+{#            <td>{{ contact.ssn }}</td>#}
+{#            <td>{{ contact.company }}</td>#}
+{#            <td>{{ contact.job }}</td>#}
+            <td>{{ contact.mail }}</td>
+            <td>{{ contact.telephone }}</td>
+{#            <td>{{ contact.address }}</td>#}
+            <td>
+                <input type="button" onclick="location.href='{% url 'contacts:detail' pk=contact.id %}';" value="Detail" />
+                <input type="button" onclick="location.href='{% url 'contacts:update' pk=contact.id %}';" value="Edit" />
+                <input type="button" onclick="location.href='{% url 'contacts:delete' pk=contact.id %}';" value="Delete" />
+            </td>
+
+        </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}
